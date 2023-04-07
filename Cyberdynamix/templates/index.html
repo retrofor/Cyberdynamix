@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>聊天界面</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="chat-display-container">
+      <div id="chat-display-window"></div>
+    </div>
+    <div class="chat-input-container">
+      <textarea id="user-input" placeholder="请输入消息"></textarea>
+      <button id="submit-button">发送</button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{{ url_for('static', filename='index.js') }}"></script>
+  <script>
+    $(function() {
+      $('#submit-button').click(sendMessage);
+
+      function sendMessage() {
+        var message = $('#user-input').val().trim();
+        if (message) {
+          $.ajax({
+            type: 'POST',
+            url: '/',
+            data: JSON.stringify({ "message": message }),
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            success: function(data) {
+              var reply = data['message'];
+              $('#chat-display-window').append('<p><span class="user-message">' + message + '</span></p>');
+              $('#chat-display-window').append('<p><span class="bot-message">' + reply + '</span></p>');
+              $('#user-input').val('');
+              $('#chat-display-window').scrollTop($('#chat-display-window')[0].scrollHeight);
+            }
+          });
+        }
+      }
+    });
+  </script>
+</body>
+</html>
