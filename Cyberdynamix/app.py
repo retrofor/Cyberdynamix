@@ -10,16 +10,13 @@ with open('static/responses.json', 'r', encoding='utf-8') as f:
 app = Flask(__name__)
 
 def process(text):
-    # 如果用户输入中包含 my_dict 中的某个键，则返回对应的值
-    for key, value in responses.items():
-        if key in text:
-            return value
-
-    # 如果用户输入不包含任何键，则返回默认回复
-    return '抱歉，我不明白您的意思'
+    return next(
+        (value for key, value in responses.items() if key in text),
+        '抱歉，我不明白您的意思',
+    )
 
 def load_plugin(plugin_name, **kwargs):
-    module_name = 'plugins.' + plugin_name.lower() + '_plugin'
+    module_name = f'plugins.{plugin_name.lower()}_plugin'
     plugin_module = importlib.import_module(module_name)
     plugin_cls = getattr(plugin_module, plugin_name)
     plugin = create_plugin(plugin_cls, **kwargs)
@@ -44,8 +41,7 @@ def reply():
     # 在 responses 变量中查找匹配该输入语句的回复
     reply = None
     for pattern, definition in responses.items():
-        match = re.match(pattern, message)
-        if match:
+        if match := re.match(pattern, message):
             if definition['type'] == 'text':
                 reply = definition['data']
             elif definition['type'] == 'plugin':
