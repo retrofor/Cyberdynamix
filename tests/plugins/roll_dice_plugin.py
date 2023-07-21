@@ -14,7 +14,7 @@ class RollDicePlugin(Plugin):
     def run(self):
         # 创建一个列表来存储每次掷骰的点数
         rolls = []
-        for i in range(self.num):
+        for _ in range(self.num):
             # 在 1 和骰子面数之间选择一个随机整数
             roll = random.randint(1, self.sides)
             # 将随机整数添加到列表中
