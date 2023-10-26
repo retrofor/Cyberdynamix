@@ -1,0 +1,76 @@
+/* 全局样式设置 */
+:root {
+	/* 主题色 */
+	--mainColor: #00aaff;
+	/* ————消息列表———— */
+	/* 背景色 */
+	--listBackColorMain: #1B1B1B;
+	/* 鼠标悬停背景色 */
+	--listBackColorMainHover: #2D2D2D;
+	/* 姓名群号的颜色 */
+	--listNameFontColor: #ffffff;
+	/* 消息内容的颜色 */
+	--listContFontColor: #6d6d6d;
+	/* 特殊消息的颜色 */
+	--listContFontColorB: var(--mainColor);
+	/* 未屏蔽提醒 */
+	--listNumBackColor: var(--mainColor);
+	/* 屏蔽提醒 */
+	--listNumBackColorHide: #a3a3a3;
+	/* 被打开的群聊 */
+	--listBackColorMainAct: var(--mainColor);
+
+	/* ————搜索框———— */
+	/* 搜索焦点边框色 */
+	--searchBorderColor: var(--mainColor);
+	/* 搜索框提示字颜色 */
+	--searchPlaceholderColor: #6d6d6d;
+	/* 搜索框背景色 */
+	--searchBackColor: #282828;
+	/* 搜索框文字色 */
+	--searchFontColor: #ffffff;
+
+	/* ————消息内容———— */
+	/* 背景色 */
+	--messageBackColorMain: #111111;
+	/* 消息框阴影 */
+	--messageShodow: rgba(0, 0, 0, .1) 0 .2em .5em;
+	/* 消息框圆角 */
+	--messageBorderRadius: 1em;
+	/* 消息框边距 */
+	--messagePadding: .4em .5em;
+	--messageMargin: .8em 0;
+	/* 我的消息框颜色 */
+	--messageMyTalkColor: var(--mainColor);
+	--messageMyTalkFontColor: #ffffff;
+	/* 他人消息框颜色 */
+	--messageOtherTalkColor: #262626;
+	--messageOtherTalkFontColor: #ffffff;
+	/* AT的消息颜色 */
+	--messageFontColorAt: var(--mainColor);
+	--messageMyFontColorAt: rgba(255, 255, 255, .7);
+	/* 引用消息颜色 */
+	--messageReplyTalkColor: rgba(255, 255, 255, 0.1);
+	/* 名牌颜色 */
+	--userNameFontColor: #a3a3a3;
+
+	/* 标题颜色 */
+	--titleBackColor: #282828;
+	--titleBackFontColor: #ffffff;
+
+	/* ————输入框———— */
+	--inputBackColor: #111111;
+	--inputBorderColor: #1B1B1B;
+	/* 输入框图标颜色 */
+	--inputIconColor: #6d6d6d;
+	--inputIconColorHover: var(--mainColor);
+	/* 输入框颜色 */
+	--inputTextAreaBackColor: #1B1B1B;
+	--inputTextAreaFontColor: #ffffff;
+	/* 发送按钮颜色 */
+	--inputSendButtonBackColor: #6d6d6d;
+	--inputSendButtonFontColor: #ffffff;
+	/* 发送按钮悬停颜色 */
+	--inputSendButtonBackColorHover: var(--mainColor);
+	--inputSendButtonFontColorHover: #ffffff;
+}

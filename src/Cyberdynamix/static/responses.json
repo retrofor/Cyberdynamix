@@ -1,7 +1,7 @@
 {
   "你好": {
     "type": "text",
-    "data": "您好，欢迎使用本聊天应用程序！"
+    "data": "您好，欢迎使用Cyberdynamix！"
   },
   "^\\.r(?P<num>.+)d(?P<sides>.+)$": {
     "type":"plugin",

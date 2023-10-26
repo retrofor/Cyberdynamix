@@ -1,10 +1,13 @@
 import re
 import json
+from os.path import join, abspath, dirname
 import importlib
 from flask import Flask, request, jsonify, render_template, send_from_directory
-from .plugin import Plugin, create_plugin
+from Cyberdynamix.plugin import Plugin, create_plugin
 
-with open('static/responses.json', 'r', encoding='utf-8') as f:
+DIR = dirname(abspath(__file__))
+
+with open(join(DIR, 'static', 'responses.json'), 'r', encoding='utf-8') as f:
     responses = json.load(f)
 
 app = Flask(__name__)
@@ -16,7 +19,7 @@ def process(text):
     )
 
 def load_plugin(plugin_name, **kwargs):
-    module_name = f'plugins.{plugin_name.lower()}_plugin'
+    module_name = f'plugins.{plugin_name.lower()}'
     plugin_module = importlib.import_module(module_name)
     plugin_cls = getattr(plugin_module, plugin_name)
     plugin = create_plugin(plugin_cls, **kwargs)
@@ -35,10 +38,8 @@ def send_static(path):
 def reply():
     data = request.get_json()
 
-    # 获取请求中的输入语句
     message = data['message']
 
-    # 在 responses 变量中查找匹配该输入语句的回复
     reply = None
     for pattern, definition in responses.items():
         if match := re.match(pattern, message):
@@ -50,11 +51,9 @@ def reply():
                 reply = load_plugin(plugin_name, **calling_args)
             break
 
-    # 如果没有找到匹配的回复，则返回 process 函数的返回值
     if not reply:
         reply = process(message)
 
-    # 将回复转换为 JSON 格式并返回响应
     response = {'message': reply}
     return jsonify(response)
 
