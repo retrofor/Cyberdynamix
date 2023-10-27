@@ -1,29 +1,28 @@
 /* 全局样式设置 */
 :root {
 	/* 主题色 */
-	--mainColor: #00aaff;
-	/* #0f0f0f #6e6e6e #a0a0a0 #e6e6e6 #f0f0f0 #fafafa #ffffff */
+	/* #AC5E45 #E76A54 #FFE6BB #27393B #617979 #35887a #85CABF #a9eae1 #D8F5F3 #EEF6F8 #ffffff */
 }
 
 /* ————滚动条颜色———— */
 /* 消息栏 */
 #main:hover::-webkit-scrollbar-thumb {
-	background-color: #e6e6e6;
+	background-color: #ffffff;
 }
 
 /* 消息列表 */
 #listMain:hover::-webkit-scrollbar-thumb {
-	background-color:  #e6e6e6;
+	background-color: #ffffff;
 }
 
 /* 公告 */
 .noticeMain::-webkit-scrollbar-thumb {
-	background-color:  #e6e6e6;
+	background-color: #ffffff;
 }
 
 /* 群成员 */
 .friendMain::-webkit-scrollbar-thumb {
-	background-color:  #e6e6e6;
+	background-color: #ffffff;
 }
 
 
@@ -32,7 +31,7 @@
 #openRight,
 #closeLeft,
 #openLeft {
-	background-color: #ffffff;
+	background-color: #D8F5F3;
 	box-shadow: rgba(0, 0, 0, .1) 0 .2em .5em;
 }
 
@@ -40,49 +39,49 @@
 #openRight:hover,
 #closeLeft:hover,
 #openLeft:hover {
-	background-color: #f0f0f0;
+	background-color: #a9eae1;
 }
 
 #closeRight::after,
 #openRight::after,
 #closeLeft::after,
 #openLeft::after {
-	border-color: #6e6e6e;
+	border-color: #35887a;
 }
 
 /* ————————对话列表———————— */
 #list {
-	background-color: #ffffff;
+	background-color: #D8F5F3;
 }
 
 /* 每个对话 */
 .listLable {
-	background-color: #ffffff;
+	background-color: #D8F5F3;
 }
 
 /* 鼠标悬停 */
 .listLable:hover {
-	background-color: #f0f0f0;
+	background-color: #a9eae1;
 }
 
 /* 群名 */
 .ListName {
-	color: #0f0f0f;
+	color: #617979;
 }
 
 /* 消息内容缩略 */
 .ListContent {
-	color: #a0a0a0;
+	color: #27393B;
 }
 
 /* 特殊消息（at） */
 .ListContentB {
-	color: var(--mainColor);
+	color: #E76A54;
 }
 
 /* 消息时间 */
 .ListTime {
-	color: #a0a0a0;
+	color: #85CABF;
 }
 
 /* 消息数量 */
@@ -92,75 +91,86 @@
 
 /* 未屏蔽 */
 .ListNumRed {
-	background-color: var(--mainColor);
+	background-color: #E76A54;
 }
 
 /* 屏蔽 */
 .ListNumGray {
-	background-color: #a0a0a0;
+	background-color: #85CABF;
 }
 
 /* 被打开的群聊 */
 .active,
 .active:hover {
-	background-color: var(--mainColor);
+	background-color: #ffffff;
 }
 
 .active * {
-	color: #ffffff;
+	/* color: #ffffff; */
 }
 
 /* 底部按钮 */
 #listButton {
-	background-color: #ffffff;
+	background-color: #D8F5F3;
 }
 
 .listButton {
-	fill: #a0a0a0;
+	fill: #85CABF;
 }
 
 .listButton:hover {
-	fill: var(--mainColor);
+	fill: #35887a;
 }
 
 /* ————搜索———— */
 #ListSearchInput {
-	background-color: #f0f0f0;
-	color:  #0f0f0f;
+	background-color: #E76A54;
+	color: #ffffff;
 	border: transparent 1px solid;
 	border-radius: 2em;
+	border-color: #ffffff;
+}
+
+#ListSearchBox {
+	background-color: #E76A54;
 }
 
 /* 提示文字 */
 #ListSearchInput::placeholder {
-	color:  #a0a0a0;
+	color: #ffffff;
 }
 
 /* 焦点 */
 #ListSearchInput:focus {
-	border-color: var(--mainColor);
+	border-color: #ffffff;
+	background-color: #ffffff;
+	color: #27393B;
 }
 
 /* ————————群名信息等———————— */
 #title {
-	background-color: #fafafa;
-	color: #6e6e6e;
+	background-color: #E76A54;
+	color: #ffffff;
 }
 
 /* ————————对话———————— */
 #main {
-	background-color: #f2f2f2;
+	background-color: #EEF6F8;
 }
 
 /* 气泡样式 */
 .myMessage .MessageTalk {
-	background-color: var(--mainColor);
-	color: #ffffff;
+	background-color: #D8F5F3;
+	border: #ffffff 2px solid;
+	padding: calc(.5em - 2px);
+	color: #35887a;
 }
 
 .otherMessage .MessageTalk {
-	background-color: #ffffff;
-	color: #6e6e6e;
+	background-color: #FFE6BB;
+	border: #ffffff 2px solid;
+	padding: calc(.4em - 2px) calc(.5em - 2px);
+	color: #AC5E45;
 }
 
 /* 用户名 */
@@ -188,16 +198,16 @@
 /* 回复其他人消息 */
 .replyMessage {
 	border-radius: .5em;
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* at他人的消息 */
 .otherMessage .MessageTalkAt {
-	color: var(--mainColor);
+	color: #E76A54;
 }
 
 .myMessage .MessageTalkAt {
-	color: rgba(255, 255, 255, .7);
+	color: #85CABF;
 }
 
 /* 时间戳/入群提醒 */
@@ -206,40 +216,40 @@
 }
 
 .messageTimeBox span {
-	color: var(--mainColor);
+	color: #E76A54;
 }
 
 /* ——————输入框—————— */
 #input {
-	background-color: #fafafa;
-	border-top: #fafafa 1px solid;
+	background-color: #85CABF;
+	border-top: #85CABF 1px solid;
 }
 
 /* 输入框图标 */
 .inputIcon {
-	fill: #a0a0a0;
+	fill: #D8F5F3;
 }
 
 .inputIcon:hover {
-	fill: var(--mainColor);
+	fill: #ffffff;
 }
 
 /* 输入的文字 */
 #inputMessage {
-	background-color:#f0f0f0;
-	color: #0f0f0f;
+	background-color: #ffffff;
+	color: #ffffff;
 	border-radius: 1em;
 }
 
 /* 发送按钮 */
 #sendButton {
-	background-color: #e6e6e6;
-	color: #6e6e6e;
+	background-color: #a9eae1;
+	color: #ffffff;
 	border-radius: 1em;
 }
 
 #sendButton:hover {
-	background-color: var(--mainColor);
+	background-color: #E76A54;
 	color: #ffffff;
 }
 
@@ -248,42 +258,42 @@
 #notice,
 #smallNotice,
 #friend {
-	background-color: #ffffff;
+	background-color: #D8F5F3;
 }
 
 /* 公告标题 */
 .noticeTitle,
 .friendTitle {
-	background-color: #fafafa;
-	color: #6e6e6e;
+	background-color: #a9eae1;
+	color: #27393B;
 }
 
 /* 内容颜色 */
 .noticeCont {
-	color: #6e6e6e;
+	color: #27393B;
 }
 
 .noticeCont:hover {
-	background-color: #e6e6e6;
-	color: #6e6e6e;
+	background-color: #ffffff;
+	color: #27393B;
 }
 
 /* 重要信息（置顶） */
 .noticeImportant {
-	color: var(--mainColor);
+	color: #E76A54;
 }
 
 /* ————————群友———————— */
 .friendCont:hover {
-	background-color: #2D2D2D;
+	background-color: #EEF6F8;
 }
 
 /* 下线群友 */
 .friendName {
-	color: #a0a0a0;
+	color: #85CABF;
 }
 
 /* 在线群友 */
 .online .friendName {
-	color: #0f0f0f;
+	color: #27393B;
 }
