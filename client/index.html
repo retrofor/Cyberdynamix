@@ -12,6 +12,7 @@
 
 			// 修改主题配色方案
 			function changeTheme() {
+				var themeAll = ["black", "white", "watermelon"];
 				// 移除之前的主题
 				var links = document.getElementsByTagName("link");
 				for (var i = 0; i < links.length; i++) {
@@ -22,13 +23,17 @@
 					}
 				}
 				// 切换成新的
-				if (theme == "black") theme = "white";
-				else if (theme == "white") theme = "black";
+				for (var i = 0; i < themeAll.length; i++) {
+					if (themeAll[i] == theme) {
+						if (i != themeAll.length - 1) theme = themeAll[i + 1];
+						else theme = themeAll[0];
+						break;
+					}
+				}
 				var link = document.createElement('link');
 				link.rel = 'stylesheet';
 				link.setAttribute("class", "theme");
 				link.href = theme + '.css';
-				console.log(link);
 				document.head.appendChild(link);
 
 			}

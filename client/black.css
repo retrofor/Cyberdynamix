@@ -2,75 +2,288 @@
 :root {
 	/* 主题色 */
 	--mainColor: #00aaff;
-	/* ————消息列表———— */
-	/* 背景色 */
-	--listBackColorMain: #1B1B1B;
-	/* 鼠标悬停背景色 */
-	--listBackColorMainHover: #2D2D2D;
-	/* 姓名群号的颜色 */
-	--listNameFontColor: #ffffff;
-	/* 消息内容的颜色 */
-	--listContFontColor: #6d6d6d;
-	/* 特殊消息的颜色 */
-	--listContFontColorB: var(--mainColor);
-	/* 未屏蔽提醒 */
-	--listNumBackColor: var(--mainColor);
-	/* 屏蔽提醒 */
-	--listNumBackColorHide: #a3a3a3;
-	/* 被打开的群聊 */
-	--listBackColorMainAct: var(--mainColor);
+	/* #0f0f0f #1e1e1e #282828 #2D2D2D #6e6e6e #a0a0a0 #ffffff */
+}
 
-	/* ————搜索框———— */
-	/* 搜索焦点边框色 */
-	--searchBorderColor: var(--mainColor);
-	/* 搜索框提示字颜色 */
-	--searchPlaceholderColor: #6d6d6d;
-	/* 搜索框背景色 */
-	--searchBackColor: #282828;
-	/* 搜索框文字色 */
-	--searchFontColor: #ffffff;
+/* ————滚动条颜色———— */
+/* 消息栏 */
+#main:hover::-webkit-scrollbar-thumb {
+	background-color: #282828;
+}
 
-	/* ————消息内容———— */
-	/* 背景色 */
-	--messageBackColorMain: #111111;
-	/* 消息框阴影 */
-	--messageShodow: rgba(0, 0, 0, .1) 0 .2em .5em;
-	/* 消息框圆角 */
-	--messageBorderRadius: 1em;
-	/* 消息框边距 */
-	--messagePadding: .4em .5em;
-	--messageMargin: .8em 0;
-	/* 我的消息框颜色 */
-	--messageMyTalkColor: var(--mainColor);
-	--messageMyTalkFontColor: #ffffff;
-	/* 他人消息框颜色 */
-	--messageOtherTalkColor: #262626;
-	--messageOtherTalkFontColor: #ffffff;
-	/* AT的消息颜色 */
-	--messageFontColorAt: var(--mainColor);
-	--messageMyFontColorAt: rgba(255, 255, 255, .7);
-	/* 引用消息颜色 */
-	--messageReplyTalkColor: rgba(255, 255, 255, 0.1);
-	/* 名牌颜色 */
-	--userNameFontColor: #a3a3a3;
+/* 消息列表 */
+#listMain:hover::-webkit-scrollbar-thumb {
+	background-color:  #6e6e6e;
+}
 
-	/* 标题颜色 */
-	--titleBackColor: #282828;
-	--titleBackFontColor: #ffffff;
+/* 公告 */
+.noticeMain::-webkit-scrollbar-thumb {
+	background-color:  #6e6e6e;
+}
 
-	/* ————输入框———— */
-	--inputBackColor: #111111;
-	--inputBorderColor: #1B1B1B;
-	/* 输入框图标颜色 */
-	--inputIconColor: #6d6d6d;
-	--inputIconColorHover: var(--mainColor);
-	/* 输入框颜色 */
-	--inputTextAreaBackColor: #1B1B1B;
-	--inputTextAreaFontColor: #ffffff;
-	/* 发送按钮颜色 */
-	--inputSendButtonBackColor: #6d6d6d;
-	--inputSendButtonFontColor: #ffffff;
-	/* 发送按钮悬停颜色 */
-	--inputSendButtonBackColorHover: var(--mainColor);
-	--inputSendButtonFontColorHover: #ffffff;
+/* 群成员 */
+.friendMain::-webkit-scrollbar-thumb {
+	background-color:  #6e6e6e;
+}
+
+
+/* ————————交互———————— */
+#closeRight,
+#openRight,
+#closeLeft,
+#openLeft {
+	background-color: #1e1e1e;
+	box-shadow: rgba(0, 0, 0, .1) 0 .2em .5em;
+}
+
+#closeRight:hover,
+#openRight:hover,
+#closeLeft:hover,
+#openLeft:hover {
+	background-color: #2D2D2D;
+}
+
+#closeRight::after,
+#openRight::after,
+#closeLeft::after,
+#openLeft::after {
+	border-color: #6e6e6e;
+}
+
+/* ————————对话列表———————— */
+#list {
+	background-color: #1e1e1e;
+}
+
+/* 每个对话 */
+.listLable {
+	background-color: #1e1e1e;
+}
+
+/* 鼠标悬停 */
+.listLable:hover {
+	background-color: #2D2D2D;
+}
+
+/* 群名 */
+.ListName {
+	color: #ffffff;
+}
+
+/* 消息内容缩略 */
+.ListContent {
+	color: #6e6e6e;
+}
+
+/* 特殊消息（at） */
+.ListContentB {
+	color: var(--mainColor);
+}
+
+/* 消息时间 */
+.ListTime {
+	color: #6e6e6e;
+}
+
+/* 消息数量 */
+.ListNum {
+	color: #ffffff;
+}
+
+/* 未屏蔽 */
+.ListNumRed {
+	background-color: var(--mainColor);
+}
+
+/* 屏蔽 */
+.ListNumGray {
+	background-color: #a0a0a0;
+}
+
+/* 被打开的群聊 */
+.active,
+.active:hover {
+	background-color: var(--mainColor);
+}
+
+.active * {
+	color: #ffffff;
+}
+
+/* 底部按钮 */
+#listButton {
+	background-color: #1e1e1e;
+}
+
+.listButton {
+	fill: #6e6e6e;
+}
+
+.listButton:hover {
+	fill: var(--mainColor);
+}
+
+/* ————搜索———— */
+#ListSearchInput {
+	background-color: #282828;
+	color:  #ffffff;
+	border: transparent 1px solid;
+	border-radius: 2em;
+}
+
+/* 提示文字 */
+#ListSearchInput::placeholder {
+	color:  #6e6e6e;
+}
+
+/* 焦点 */
+#ListSearchInput:focus {
+	border-color: var(--mainColor);
+}
+
+/* ————————群名信息等———————— */
+#title {
+	background-color: #282828;
+	color: #ffffff;
+}
+
+/* ————————对话———————— */
+#main {
+	background-color: #0f0f0f;
+}
+
+/* 气泡样式 */
+.myMessage .MessageTalk {
+	background-color: var(--mainColor);
+	color: #ffffff;
+}
+
+.otherMessage .MessageTalk {
+	background-color: #262626;
+	color: #ffffff;
+}
+
+/* 用户名 */
+.userName {
+	color: #a0a0a0;
+}
+
+/* 图片信息 */
+.MessageImage {
+	border-radius: 1em;
+	box-shadow: rgba(0, 0, 0, .1) 0 .2em .5em;
+}
+
+/* 文字消息 */
+.MessageTalk {
+	border-radius: 1em;
+	box-shadow: rgba(0, 0, 0, .1) 0 .2em .5em;
+}
+
+/* 文字消息中的图片 */
+.MessageTalk img {
+	border-radius: .5em;
+}
+
+/* 回复其他人消息 */
+.replyMessage {
+	border-radius: .5em;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* at他人的消息 */
+.otherMessage .MessageTalkAt {
+	color: var(--mainColor);
+}
+
+.myMessage .MessageTalkAt {
+	color: rgba(255, 255, 255, .7);
+}
+
+/* 时间戳/入群提醒 */
+.messageTimeBox {
+	color: #a0a0a0;
+}
+
+.messageTimeBox span {
+	color: var(--mainColor);
+}
+
+/* ——————输入框—————— */
+#input {
+	background-color: #0f0f0f;
+	border-top: #1e1e1e 1px solid;
+}
+
+/* 输入框图标 */
+.inputIcon {
+	fill: #6e6e6e;
+}
+
+.inputIcon:hover {
+	fill: var(--mainColor);
+}
+
+/* 输入的文字 */
+#inputMessage {
+	background-color:#1e1e1e;
+	color: #ffffff;
+	border-radius: 1em;
+}
+
+/* 发送按钮 */
+#sendButton {
+	background-color: #6e6e6e;
+	color: #ffffff;
+	border-radius: 1em;
+}
+
+#sendButton:hover {
+	background-color: var(--mainColor);
+	color: #ffffff;
+}
+
+
+/* ————————公告———————— */
+#notice,
+#smallNotice,
+#friend {
+	background-color: #1e1e1e;
+}
+
+/* 公告标题 */
+.noticeTitle,
+.friendTitle {
+	background-color: #2D2D2D;
+	color: #ffffff;
+}
+
+/* 内容颜色 */
+.noticeCont {
+	color: #6e6e6e;
+}
+
+.noticeCont:hover {
+	background-color: #2D2D2D;
+	color: #ffffff;
+}
+
+/* 重要信息（置顶） */
+.noticeImportant {
+	color: var(--mainColor);
+}
+
+/* ————————群友———————— */
+.friendCont:hover {
+	background-color: #2D2D2D;
+}
+
+/* 下线群友 */
+.friendName {
+	color: #6e6e6e;
+}
+
+/* 在线群友 */
+.online .friendName {
+	color: #ffffff;
 }

@@ -30,9 +30,11 @@ body {
 }
 
 #left,
-#right {
+#right,
+#smallLeft {
 	width: 17em;
 	height: 100%;
+	z-index: 2;
 }
 
 #smallLeft {
@@ -87,35 +89,17 @@ body {
 	background-color: transparent;
 }
 
-#main:hover::-webkit-scrollbar-thumb {
-	background-color: var(--messageReplyTalkColor);
-}
-
-#listMain:hover::-webkit-scrollbar-thumb {
-	background-color: var(--searchPlaceholderColor);
-}
-
-.noticeMain::-webkit-scrollbar-thumb {
-	background-color: var(--searchPlaceholderColor);
-}
-
-.friendMain::-webkit-scrollbar-thumb {
-	background-color: var(--searchPlaceholderColor);
-}
-
 /* ————————交互———————— */
 #closeRight,
 #openRight,
 #closeLeft,
 #openLeft {
 	position: absolute;
-	background-color: var(--listBackColorMain);
 	width: .8em;
 	height: 6em;
 	z-index: 1;
 	right: 100%;
 	top: calc(50% - 3em);
-	box-shadow: var(--messageShodow);
 }
 
 #closeRight,
@@ -138,21 +122,13 @@ body {
 	left: 0;
 }
 
-#closeRight:hover,
-#openRight:hover,
-#closeLeft:hover,
-#openLeft:hover {
-	background-color: var(--listBackColorMainHover);
-}
-
-
 #closeRight::after,
 #openRight::after,
 #closeLeft::after,
 #openLeft::after {
 	font-size: .8em;
 	content: "";
-	border: var(--listContFontColor) 2px solid;
+	border: 2px solid;
 	border-left: none;
 	border-bottom: none;
 	width: .5em;
@@ -175,7 +151,6 @@ body {
 /* ————————对话列表———————— */
 #list {
 	height: 100%;
-	background-color: var(--listBackColorMain);
 }
 
 #smallLeft .ListCont,
@@ -193,11 +168,6 @@ body {
 	height: 3em;
 	overflow: hidden;
 	padding: .5em;
-}
-
-/* 鼠标悬停 */
-.listLable:hover {
-	background-color: var(--listBackColorMainHover);
 }
 
 /* 群头像 */
@@ -225,21 +195,18 @@ body {
 
 /* 群名 */
 .ListName {
-	color: var(--listNameFontColor);
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
 
 /* 消息内容缩略 */
 .ListContent {
-	color: var(--listContFontColor);
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
 
 /* 特殊消息（at） */
 .ListContentB {
-	color: var(--listContFontColorB);
 	margin-right: .3em;
 }
 
@@ -250,18 +217,15 @@ body {
 
 .ListTime {
 	text-align: right;
-	color: var(--listContFontColor);
 	font-size: .8em;
 }
 
 /* 消息数量 */
 .ListNum {
 	font-weight: bolder;
-	color: #ffffff;
 	border-radius: 1em;
 	font-size: .8em;
 	position: absolute;
-	background-color: var(--listContFontColor);
 	padding: 0 .5em;
 	margin: 0 auto;
 	position: absolute;
@@ -269,36 +233,16 @@ body {
 	top: 2em;
 }
 
-/* 未屏蔽 */
-.ListNumRed {
-	background-color: var(--listNumBackColor);
-}
-
-/* 屏蔽 */
-.ListNumGray {
-	background-color: var(--listNumBackColorHide);
-}
-
-/* 被打开的群聊 */
-.active,
-.active:hover {
-	background-color: var(--listBackColorMainAct);
-}
-
-.active * {
-	color: #ffffff;
-}
-
 #listMain {
 	height: calc(100% - 3em - 2.8em);
 	overflow-y: auto;
 }
 
+/* 底部按钮 */
 #listButton {
 	padding: .5em;
 	height: 1.8em;
 	width: calc(100% - 1em);
-	background-color: var(--listBackColorMain);
 	border-radius: 0 1em 1em 0;
 	z-index: 1;
 	white-space: nowrap;
@@ -308,12 +252,7 @@ body {
 .listButton {
 	height: 1.8em;
 	width: 1.8em;
-	fill: var(--inputIconColor);
 	padding: 0 .6em;
-}
-
-.listButton:hover {
-	fill: var(--inputIconColorHover);
 }
 
 #listButton:hover {
@@ -330,11 +269,7 @@ body {
 	width: calc(100% - 1em);
 	height: calc(1em - 2px);
 	padding: .5em;
-	border: transparent 1px solid;
-	border-radius: 2em;
 	display: inline-block;
-	background-color: var(--searchBackColor);
-	color: var(--searchFontColor);
 }
 
 #smallLeft #ListSearchInput:focus {
@@ -344,40 +279,22 @@ body {
 }
 
 #ListSearchInput:focus {
-	border-color: var(--searchBorderColor);
 	outline: none;
 }
 
-#ListSearchInput::placeholder {
-	color: var(--searchPlaceholderColor);
-}
 
 /* ————————群名信息等———————— */
 #title {
 	text-align: center;
 	line-height: 3em;
 	height: 3em;
-	background-color: var(--titleBackColor);
-	color: var(--titleBackFontColor);
 }
 
 /* ————————对话———————— */
 #main {
 	height: 100%;
-	background-color: var(--messageBackColorMain);
 	overflow-y: scroll;
 	padding: .5em 1em;
-}
-
-/* 气泡样式 */
-.myMessage .MessageTalk {
-	background-color: var(--messageMyTalkColor);
-	color: var(--messageMyTalkFontColor);
-}
-
-.otherMessage .MessageTalk {
-	background-color: var(--messageOtherTalkColor);
-	color: var(--messageOtherTalkFontColor);
 }
 
 /* 用户头像 */
@@ -407,14 +324,14 @@ body {
 /* 用户名 */
 .userName {
 	font-size: .8em;
-	color: var(--userNameFontColor);
 	margin-top: .5em;
 	display: table;
 
 }
 
 /* 头衔：群主 管理员 */
-.userName span {
+.userName span,
+.friendName span {
 	font-size: .9em;
 	padding: .2em .5em;
 	border-radius: .5em;
@@ -422,11 +339,13 @@ body {
 	color: #ffffff;
 }
 
-.userName .green {
+.userName .green,
+.friendName .green {
 	background-color: #45d8af;
 }
 
-.userName .yellow {
+.userName .yellow,
+.friendName .yellow {
 	background-color: #ffc96c;
 }
 
@@ -438,12 +357,10 @@ body {
 
 /* 图片消息 */
 .MessageImage {
-	border-radius: var(--messageBorderRadius);
-	margin: var(--messageMargin);
 	display: table;
 	overflow: hidden;
 	max-width: 10em;
-	box-shadow: var(--messageShodow);
+	margin: .8em 0;
 }
 
 .MessageImage img {
@@ -453,11 +370,9 @@ body {
 
 /* 文字消息 */
 .MessageTalk {
-	padding: var(--messagePadding);
-	border-radius: var(--messageBorderRadius);
-	margin: var(--messageMargin);
+	padding: .4em .5em;
+	margin: .8em 0;
 	display: table;
-	box-shadow: var(--messageShodow);
 }
 
 /* 消息左右分开 */
@@ -470,15 +385,12 @@ body {
 /* 文字消息中的图片 */
 .MessageTalk img {
 	max-width: 100%;
-	border-radius: .5em;
 	display: block;
 }
 
 /* 回复其他人消息 */
 .replyMessage {
-	background-color: var(--messageReplyTalkColor);
 	padding: .5em;
-	border-radius: .5em;
 }
 
 .replyuserName,
@@ -488,59 +400,44 @@ body {
 
 /* at他人的消息 */
 .otherMessage .MessageTalkAt {
-	color: var(--messageFontColorAt);
 	margin-right: .3em;
 }
 
 .myMessage .MessageTalkAt {
-	color: var(--messageMyFontColorAt);
 	margin-right: .3em;
 }
 
-/* 时间戳 */
+/* 时间戳/入群提醒 */
 .messageTimeBox {
 	font-size: .8em;
 	text-align: center;
-	color: var(--userNameFontColor);
 	margin: 3em 0 2em;
 }
 
 .messageTimeBox span {
 	font-size: 1em;
-	color: var(--messageFontColorAt);
 	margin: 0 .3em;
 }
 
 /* ——————输入框—————— */
-#input {
-	background-color: var(--inputBackColor);
-	border-top: var(--inputBorderColor) 1px solid;
-}
-
 #inputIcon {
 	height: 1.8em;
 	padding: .5em 1em;
 }
 
+/* 输入框图标 */
 .inputIcon {
 	height: 1.8em;
 	width: 1.8em;
 	margin-right: .5em;
 	float: left;
-	fill: var(--inputIconColor);
 }
 
-.inputIcon:hover {
-	fill: var(--inputIconColorHover);
-}
-
+/* 输入的文字 */
 #inputMessage {
-	background-color: var(--inputTextAreaBackColor);
-	color: var(--inputTextAreaFontColor);
 	border: none;
 	margin: 0 1em;
 	width: calc(100% - 3em);
-	border-radius: 1em;
 	resize: none;
 	height: calc(100% - 6.8em);
 	display: block;
@@ -551,32 +448,19 @@ body {
 	outline: none;
 }
 
+/* 发送按钮 */
 #sendButton {
 	margin: .5em 1em;
 	display: block;
 	padding: .2em 1em;
-	border-radius: 1em;
 	border: none;
 	float: right;
-	background-color: var(--inputSendButtonBackColor);
-	color: var(--inputSendButtonFontColor);
 }
 
-#sendButton:hover {
-	background-color: var(--inputSendButtonBackColorHover);
-	color: var(--inputSendButtonFontColorHover);
-}
 
 
 /* ————————公告———————— */
-#notice,
-#smallNotice {
-	background-color: var(--listBackColorMain);
-}
-
 .noticeTitle {
-	background-color: var(--listBackColorMainHover);
-	color: var(--listNameFontColor);
 	height: 2em;
 	line-height: 2em;
 	padding: .2em .5em;
@@ -588,7 +472,6 @@ body {
 }
 
 .noticeCont {
-	color: var(--listContFontColor);
 	font-size: .8em;
 	padding: .5em;
 	overflow: hidden;
@@ -596,14 +479,8 @@ body {
 	white-space: nowrap;
 }
 
-.noticeCont:hover {
-	background-color: var(--listBackColorMainHover);
-	color: var(--listNameFontColor);
-}
-
 .noticeImportant {
 	font-size: 1em;
-	color: var(--listContFontColorB);
 	padding-right: .5em;
 }
 
@@ -612,12 +489,9 @@ body {
 /* ————————群成员———————— */
 #friend {
 	height: 100%;
-	background-color: var(--listBackColorMain);
 }
 
 .friendTitle {
-	background-color: var(--listBackColorMainHover);
-	color: var(--listNameFontColor);
 	height: 2em;
 	line-height: 2em;
 	padding: .2em .5em;
@@ -636,10 +510,6 @@ body {
 	white-space: nowrap;
 }
 
-.friendCont:hover {
-	background-color: var(--listBackColorMainHover);
-}
-
 .friendImage {
 	width: 1.5em;
 	height: 1.5em;
@@ -648,34 +518,14 @@ body {
 	border-radius: 100%;
 }
 
+/* 群友 */
 .friendName {
 	font-size: .8em;
 	left: 2.5em;
-	color: var(--listContFontColor);
-}
-
-.online .friendName {
-	color: var(--listNameFontColor);
 }
 
 .friendImage img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-}
-
-.friendName span {
-	font-size: .9em;
-	padding: .2em .5em;
-	border-radius: .5em;
-	margin-right: .5em;
-	color: #ffffff;
-}
-
-.friendName .green {
-	background-color: #45d8af;
-}
-
-.friendName .yellow {
-	background-color: #ffc96c;
 }
